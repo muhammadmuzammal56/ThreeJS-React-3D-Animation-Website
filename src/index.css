@@ -85,7 +85,7 @@ body::-webkit-scrollbar-thumb {
   padding: 50px 0 400px 0;
   height: 100vh;
   box-sizing: border-box;
-  opacity: 0;
+  /* opacity: 0; */
   position: relative;
 }
 
@@ -279,6 +279,7 @@ nav .link-styled {
   from {
     opacity: 1;
   }
+
   to {
     opacity: 0;
   }
@@ -328,7 +329,7 @@ nav .link-styled {
   display: flex;
   align-items: center;
   flex-direction: column;
-  opacity: 0;
+  /* opacity: 0; */
 }
 
 .sound-section .title {
@@ -341,13 +342,11 @@ nav .link-styled {
 .sound-section .text {
   display: inline-block;
   color: transparent;
-  background-image: linear-gradient(
-    90deg,
-    #1e3791 0%,
-    #2948b1 40%,
-    #3153c6 55%,
-    #385fda 60%
-  );
+  background-image: linear-gradient(90deg,
+      #1e3791 0%,
+      #2948b1 40%,
+      #3153c6 55%,
+      #385fda 60%);
   -webkit-background-clip: text;
   background-clip: text;
   padding-top: 0.5px;
@@ -399,6 +398,7 @@ nav .link-styled {
 }
 
 @media screen and (max-width: 990px) {
+
   .jumbotron-section .iphone-img,
   nav .link-styled {
     display: none;
@@ -441,4 +441,56 @@ nav .link-styled {
   .sound-section .content {
     max-width: 100%;
   }
+}
+
+#macbook {
+  text-align: center;
+  background-color: white;
+  color: #000;
+}
+
+.overlay p {
+  color: white;
+}
+
+.overlay {
+  background-image: url('../src/assets/images/bg-mac.jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 150px;
+  color: #fff;
+}
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+  padding: 20px;
+}
+
+.image-grid img {
+  width: 100%;
+  height: 90%;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.80s ease;
+}
+
+.image-grid img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.overlay ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.overlay ul li {
+  margin-bottom: 10px;
+}
+
+.overlay p {
+  line-height: 1.6;
 }
