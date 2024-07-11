@@ -11,12 +11,14 @@ import MaccBook9 from '../assets/images/macbook9.jpg';
 import MaccBook10 from '../assets/images/macbook10.jpg';
 import MaccBook11 from '../assets/images/macbook11.jpg';
 import MaccBook12 from '../assets/images/macbook12.jpg';
+import BannerImg from "../assets/images/bg-mac.jpg"
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 import Nav from './Nav';
+import Banner from './Banner';
 
 function Macbook() {
 
@@ -87,11 +89,12 @@ function Macbook() {
     return (
         <>
             <div id="macbook">
-            <Nav/>
-                <div className="overlay">
-                    <h1>Ready to Elevate Your Experience?</h1>
-                    <p>Visit iStore today and discover why MacBook is the choice of professionals and enthusiasts alike. Experience the power and beauty of Apple's MacBook lineup and unlock new possibilities in creativity, productivity, and innovation.</p>
-                </div>
+                <Nav />
+                <Banner
+                    title="Ready to Elevate Your Experience?"
+                    description="Visit iStore today and discover why MacBook is the choice of professionals and enthusiasts alike. Experience the power and beauty of Apple's MacBook lineup and unlock new possibilities in creativity, productivity, and innovation."
+                    backgroundImage={BannerImg}
+                />
                 <br />
                 <h1 >Explore Our MacBook Collection</h1>
                 <br />
