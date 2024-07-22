@@ -11,6 +11,7 @@ import Macbook from './components/Macbook'; // Import the new MacPage component
 import { useRef } from 'react';
 import Footer from './components/Footer';
 import Ipad from './components/Ipad';
+import Iphone from './components/Iphone';
 
 function HomePage() {
   const WebgiViewerRef = useRef();
@@ -41,6 +42,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/mac" element={<Macbook />} />
         <Route path="/ipad" element={<Ipad />} />
+        <Route path="/iphone" element={<Iphone />} />
       </Routes>
     </Router>
   );

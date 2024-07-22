@@ -535,4 +535,14 @@ nav .link-styled {
 }
 
 
+#ipad {
+  text-align: center;
+  background-color: white;
+  color: #000;
+}
+
+.carousel-item-content h3 {
+  color: white;
+  /* Add other styles if needed */
+}
 

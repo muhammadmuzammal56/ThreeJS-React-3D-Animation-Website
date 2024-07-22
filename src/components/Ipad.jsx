@@ -1,16 +1,16 @@
 import React from 'react';
-import MaccBook1 from '../assets/images/macbook1.jpg';
-import MaccBook2 from '../assets/images/macbook2.jpg';
-import MaccBook3 from '../assets/images/macbook3.jpg';
-import MaccBook4 from '../assets/images/macbook4.jpg';
-import MaccBook5 from '../assets/images/macbook5.jpg';
-import MaccBook6 from '../assets/images/macbook6.jpg';
-import MaccBook7 from '../assets/images/macbook7.jpg';
-import MaccBook8 from '../assets/images/macbook8.jpg';
-import MaccBook9 from '../assets/images/macbook9.jpg';
-import MaccBook10 from '../assets/images/macbook10.jpg';
-import MaccBook11 from '../assets/images/macbook11.jpg';
-import MaccBook12 from '../assets/images/macbook12.jpg';
+import ipad1 from '../assets/images/ipad1.jpg';
+import ipad2 from '../assets/images/ipad2.jpg';
+import ipad3 from '../assets/images/ipad3.jpg';
+import ipad4 from '../assets/images/ipad4.jpg';
+import ipad5 from '../assets/images/ipad5.jpg';
+import ipad6 from '../assets/images/ipad6.jpg';
+import ipad7 from '../assets/images/ipad7.jpg';
+import ipad8 from '../assets/images/ipad8.jpg';
+import ipad9 from '../assets/images/ipad9.jpg';
+import ipad10 from '../assets/images/ipad10.jpg';
+import ipad11 from '../assets/images/ipad11.jpg';
+// import ipad12 from '../assets/images/ipad12.jpg';
 import Card from '@mui/material/Card';
 import BannerImg from "../assets/images/bg-ipad.jpg"
 import CardContent from '@mui/material/CardContent';
@@ -40,14 +40,13 @@ const responsive = {
 };
 function Ipad() {
     const items = [
-        { image: MaccBook1, title: 'Title 1', description: 'Description 1' },
-        { image: MaccBook12, title: 'Title 2', description: 'Description 2' },
-        { image: MaccBook10, title: 'Title 3', description: 'Description 3' },
-        // Add more items as needed
+       { image: ipad1, title: 'iPad Pro 12.9"', description: 'The ultimate iPad experience with unparalleled performance.' },
+    { image: ipad7, title: 'iPad Air', description: 'Powerful and versatile, perfect for both work and play.' },
+    { image: ipad10, title: 'iPad Mini', description: 'Compact yet mighty, designed for portability and convenience.' },
     ];
     return (
         <>
-            <div id="macbook">
+            <div id="ipad">
                 <Nav />
                 <Banner
                     title="Ready to Elevate Your Experience?"
@@ -63,16 +62,16 @@ function Ipad() {
                     draggable={true}
                     showDots={false}
                     infinite={true}
-                    autoPlay={true}
-                    autoPlaySpeed={3000}
+                    autoPlay={true}           // Auto play enabled
+                    autoPlaySpeed={3000}      // Interval between slides (ms)
                     keyBoardControl={true}
-                    customTransition="all .5"
-                    transitionDuration={500}
+                    customTransition="transform 500ms ease-in-out"  // Custom transition for smoother animation
+                    transitionDuration={500}  // Duration of each transition (ms)
                     containerClass="carousel-container"
                     removeArrowOnDeviceType={['tablet', 'mobile']}
                     itemClass="carousel-item"
-                    partialVisible={false} // Ensures full width of items visible
-                    renderButtonGroupOutside={true} // Renders navigation buttons outside the carousel
+                    partialVisible={false}
+                    renderButtonGroupOutside={true}
                 >
                     {items.map((item, index) => (
                         <div key={index} className="carousel-item">
@@ -84,8 +83,9 @@ function Ipad() {
                         </div>
                     ))}
                 </Carousel>
-<br/>
-<br/>
+
+                <br />
+                <br />
             </div>
 
 

@@ -23,7 +23,7 @@ function Nav() {
             <Link to="/ipad" className="link-styled">iPad</Link>
           </li>
           <li>
-            <a className="link-styled">iPhone</a>
+          <Link to="/iphone" className="link-styled">iPhone</Link>
           </li>
           <li>
             <a className="link-styled">Watch</a>
