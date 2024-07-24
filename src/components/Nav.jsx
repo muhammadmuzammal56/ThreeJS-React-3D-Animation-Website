@@ -26,7 +26,7 @@ function Nav() {
           <Link to="/iphone" className="link-styled">iPhone</Link>
           </li>
           <li>
-            <a className="link-styled">Watch</a>
+            <Link to="/iwatches" className="link-styled">Watch</Link>
           </li>
           <li>
             <a className="link-styled">AirPods</a>

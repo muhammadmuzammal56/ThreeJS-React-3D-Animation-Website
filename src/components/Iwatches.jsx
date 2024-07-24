@@ -12,7 +12,7 @@ import iphone10 from '../assets/images/iphone10.jpg';
 import iphone11 from '../assets/images/iphone11.jpg';
 import iphone12 from '../assets/images/iphone12.jpg';
 import Card from '@mui/material/Card';
-import BannerImg from "../assets/images/iwatchbg.jpg"
+import BannerImg from "../assets/images/iphonebg1.jpg"
 import Nav from './Nav';
 import Banner from './Banner';
 import Carousel from 'react-multi-carousel';
@@ -41,7 +41,7 @@ const images = [
   { id: 12, src: iphone12, title: 'iPad Mini', description: 'Compact yet mighty, designed for portability and convenience.', rating: 1.0, stock: 10, price: 599.99 },
 ];
 
-function Iphone() {
+function Iwatches() {
   const [search, setSearch] = useState('');
   const [showClearIcon, setShowClearIcon] = useState('none');
 
@@ -156,4 +156,4 @@ function Iphone() {
   );
 }
 
-export default Iphone;
+export default Iwatches;
