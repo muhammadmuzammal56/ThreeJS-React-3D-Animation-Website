@@ -1,7 +1,7 @@
 import React from 'react';
-import iphone1 from '../assets/images/iphone1.jpg';
-import iphone2 from '../assets/images/iphone2.jpg';
-import iphone3 from '../assets/images/iphone3.jpg';
+import iphone1 from '../assets/images/iwatchslider1.jpg';
+import iphone2 from '../assets/images/iwatchslider2.jpg';
+import iphone3 from '../assets/images/iwatchslider3.jpg';
 import iphone4 from '../assets/images/iphone4.jpg';
 import iphone5 from '../assets/images/iphone5.jpg';
 import iphone6 from '../assets/images/iphone6.jpg';
@@ -12,7 +12,8 @@ import iphone10 from '../assets/images/iphone10.jpg';
 import iphone11 from '../assets/images/iphone11.jpg';
 import iphone12 from '../assets/images/iphone12.jpg';
 import Card from '@mui/material/Card';
-import BannerImg from "../assets/images/iphonebg1.jpg"
+import BannerImg from "../assets/images/iwatchbg1.jpg"
+import styled from 'styled-components';
 import Nav from './Nav';
 import Banner from './Banner';
 import Carousel from 'react-multi-carousel';
@@ -26,49 +27,34 @@ import InputAdornment from '@mui/material/InputAdornment';
 import SearchIcon from '@mui/icons-material/Search';
 import ClearIcon from '@mui/icons-material/Clear';
 import { FormControl } from '@mui/material';
-const images = [
-  { id: 1, src: iphone1, title: 'iPad Pro 12.9"', description: 'The ultimate iPad experience with unparalleled performance.', rating: 4.5, stock: 20, price: 999.99 },
-  { id: 2, src: iphone2, title: 'iPad Air', description: 'Powerful and versatile, perfect for both work and play.', rating: 4.3, stock: 15, price: 799.99 },
-  { id: 3, src: iphone3, title: 'iPad Mini', description: 'Compact yet mighty, designed for portability and convenience.', rating: 4.0, stock: 10, price: 599.99 },
-  { id: 4, src: iphone4, title: 'iPad Pro 12.9"', description: 'The ultimate iPad experience with unparalleled performance.', rating: 4.7, stock: 20, price: 999.99 },
-  { id: 5, src: iphone5, title: 'iPad Air', description: 'Powerful and versatile, perfect for both work and play.', rating: 4.2, stock: 15, price: 799.99 },
-  { id: 6, src: iphone6, title: 'iPad Mini', description: 'Compact yet mighty, designed for portability and convenience.', rating: 4.0, stock: 10, price: 599.99 },
-  { id: 7, src: iphone7, title: 'iPad Pro 12.9"', description: 'The ultimate iPad experience with unparalleled performance.', rating: 4.1, stock: 20, price: 999.99 },
-  { id: 8, src: iphone8, title: 'iPad Air', description: 'Powerful and versatile, perfect for both work and play.', rating: 4.9, stock: 15, price: 799.99 },
-  { id: 9, src: iphone9, title: 'iPad Mini', description: 'Compact yet mighty, designed for portability and convenience.', rating: 3.9, stock: 10, price: 599.99 },
-  { id: 10, src: iphone10, title: 'iPad Pro 12.9"', description: 'The ultimate iPad experience with unparalleled performance.', rating: 4.5, stock: 20, price: 999.99 },
-  { id: 11, src: iphone11, title: 'iPad Air', description: 'Powerful and versatile, perfect for both work and play.', rating: 4.0, stock: 15, price: 799.99 },
-  { id: 12, src: iphone12, title: 'iPad Mini', description: 'Compact yet mighty, designed for portability and convenience.', rating: 1.0, stock: 10, price: 599.99 },
-];
+import SimpleImageSlider from "react-simple-image-slider";
+import { Fade } from 'react-slideshow-image';
+import 'react-slideshow-image/dist/styles.css'
 
 function Iwatches() {
-  const [search, setSearch] = useState('');
-  const [showClearIcon, setShowClearIcon] = useState('none');
+  const responsive = {
+    desktop: {
+        breakpoint: { max: 3000, min: 1024 },
+        items: 1,  // Show only 1 item on desktop
+        slidesToSlide: 1,
+    },
+    tablet: {
+        breakpoint: { max: 1024, min: 464 },
+        items: 1,  // Show only 1 item on tablet
+        slidesToSlide: 1,
+    },
+    mobile: {
+        breakpoint: { max: 464, min: 0 },
+        items: 1,  // Show only 1 item on mobile
+        slidesToSlide: 1,
+    },
+};
 
-  const handleChange = (e) => {
-    const value = e.target.value;
-    setSearch(value);
-    setShowClearIcon(value ? 'block' : 'none');
-  };
-
-  const handleClick = (e) => {
-    e.preventDefault();
-    setSearch('');
-    setShowClearIcon('none');
-  };
-
-  const searchProduct = images.filter((product) =>
-    Object.keys(product).some((key) =>
-      product[key].toString().toLowerCase().includes(search.toLowerCase())
-    )
-  );
-
-  const Truncate = (string, number) => {
-    if (!string) return null;
-    if (string.length <= number) return string;
-    return string.slice(0, number) + '...';
-  };
-
+  const items = [
+    { image: iphone1 },
+    { image: iphone2 },
+    { image: iphone3 },
+  ];
 
   return (
     <>
@@ -83,70 +69,29 @@ function Iwatches() {
         <h1 >Explore Our iPhone Collection</h1>
         <br />
 
-        <section className="product">
-          <div className="container">
-            <div >
-              <TextField
-                size="small"
-                variant="outlined"
-                value={search}
-                onChange={handleChange}
-                InputProps={{
-                  startAdornment: (
-                    <InputAdornment position="start">
-                      <SearchIcon />
-                    </InputAdornment>
-                  ),
-                  endAdornment: (
-                    <InputAdornment
-                      position="end"
-                      style={{ display: showClearIcon, cursor: 'pointer',marginBottom:22 }}
-                      onClick={handleClick}
-                    >
-                      <ClearIcon />
-                    </InputAdornment>
-                  ),
-                }}
-              />
+        <Carousel
+          responsive={responsive}
+          swipeable={true}
+          draggable={true}
+          showDots={false}
+          infinite={true}
+          autoPlay={true}           // Auto play enabled
+          autoPlaySpeed={3000}      // Interval between slides (ms)
+          keyBoardControl={true}
+          customTransition="transform 500ms ease-in-out"  // Custom transition for smoother animation
+          transitionDuration={500}  // Duration of each transition (ms)
+          containerClass="carousel-container"
+          removeArrowOnDeviceType={['tablet', 'mobile']}
+          itemClass="carousel-item"
+          partialVisible={false}
+          renderButtonGroupOutside={true}
+        >
+          {items.map((item, index) => (
+            <div key={index} className="carousel-item">
+              <img src={item.image} alt={item.title} style={{ width: '100%', height: '100%', borderRadius: '8px' }} />
             </div>
-            <div className="grid">
-              {searchProduct.length > 0 ? (
-                searchProduct.map((product) => (
-                  <div className="card" key={product.id}>
-                    <img
-                      className="card-image"
-                      src={product.src}
-                      alt={product.title}
-                    />
-                    <div className="card-body">
-                      <h5
-                        className="card-title"
-                        title={product.title.length >= 50 ? product.title : null}
-                      >
-                        {Truncate(product.title, 55)}
-                      </h5>
-                      <p className="card-description">
-                        {Truncate(product.description, 55)}
-                      </p>
-                      <p className="card-price">${product.price}</p>
-                      <div className="card-detail">
-                        <StarRatings
-                          rating={product.rating}
-                          starDimension="16px"
-                          starSpacing="1px"
-                          starRatedColor="black"
-                        />
-                        <span>Stock: {product.stock}</span>
-                      </div>
-                    </div>
-                  </div>
-                ))
-              ) : (
-                <div className="no-results">No items match your search criteria.</div>
-              )}
-            </div>
-          </div>
-        </section>
+          ))}
+        </Carousel>
         <br />
         <br />
       </div>
