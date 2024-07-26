@@ -30,7 +30,7 @@ import { FormControl } from '@mui/material';
 import SimpleImageSlider from "react-simple-image-slider";
 import { Fade } from 'react-slideshow-image';
 import 'react-slideshow-image/dist/styles.css'
-
+import { ImageList, ImageListItem } from '@mui/material';
 function Iwatches() {
   const responsive = {
     desktop: {
@@ -55,7 +55,12 @@ function Iwatches() {
     { image: iphone2 },
     { image: iphone3 },
   ];
-
+  const ImgItems = [
+    { image: iphone1, title: 'iPhone 1' },
+    { image: iphone4, title: 'iPhone 2' },
+    { image: iphone9, title: 'iPhone 3' },
+  ];
+  
   return (
     <>
       <div id="ipad">
@@ -93,6 +98,18 @@ function Iwatches() {
           ))}
         </Carousel>
         <br />
+        <ImageList sx={{ width: 500, height: 450 }} cols={3} rowHeight={164}>
+      {ImgItems.map((item) => (
+        <ImageListItem key={item.image}>
+          <img
+            srcSet={`${item.image}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
+            src={`${item.image}?w=164&h=164&fit=crop&auto=format`}
+            alt={item.title}
+            loading="lazy"
+          />
+        </ImageListItem>
+      ))}
+    </ImageList>
         <br />
       </div>
 
